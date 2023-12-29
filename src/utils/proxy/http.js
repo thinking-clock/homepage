@@ -87,7 +87,7 @@ export async function httpProxy(url, params = {}) {
   if (constructedUrl.protocol === "https:") {
     request = httpsRequest(constructedUrl, {
       agent: new https.Agent({
-        rejectUnauthorized: false,
+        rejectUnauthorized: true,
         autoSelectFamily: true,
       }),
       ...params,
